@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   BarChart3,
   Building2,
-  CalendarCheck2,
   Clock3,
   Cpu,
   Globe2,
-  Handshake,
   Headphones,
   Landmark,
   Mail,
@@ -22,9 +20,33 @@ import {
   Zap,
 } from "lucide-react";
 import logo from "../Calivos.png";
-import supportHubImg from "./assets/support-hub.svg";
-import channelMapImg from "./assets/channel-map.svg";
-import analyticsImg from "./assets/qa-analytics.svg";
+
+const heroSlides = [
+  {
+    image:
+      "https://images.pexels.com/photos/8866775/pexels-photo-8866775.jpeg?cs=srgb&dl=pexels-yankrukov-8866775.jpg&fm=jpg",
+    title: "Customer Support Teams That Scale Fast",
+    subtitle: "Dedicated agents aligned to your scripts, tone, and service standards.",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/8191956/pexels-photo-8191956.jpeg?cs=srgb&dl=pexels-shkrabaanthony-8191956.jpg&fm=jpg",
+    title: "Operational Discipline Across Every Shift",
+    subtitle: "Structured QA, monitoring, and reporting for consistent customer outcomes.",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/8192014/pexels-photo-8192014.jpeg?cs=srgb&dl=pexels-shkrabaanthony-8192014.jpg&fm=jpg",
+    title: "Technology-Enabled Service Delivery",
+    subtitle: "Integrated workflows for inbound care, outbound campaigns, and retention calls.",
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/8866749/pexels-photo-8866749.jpeg?cs=srgb&dl=pexels-yankrukov-8866749.jpg&fm=jpg",
+    title: "Human-First Customer Experience",
+    subtitle: "Empathetic communication with measurable performance improvement.",
+  },
+];
 
 const solutionCards = [
   {
@@ -104,19 +126,28 @@ const visualCards = [
   {
     title: "Support Command Center",
     text: "Unified visibility across teams, queues, and service levels.",
-    image: supportHubImg,
+    image:
+      "https://images.pexels.com/photos/8192249/pexels-photo-8192249.jpeg?cs=srgb&dl=pexels-shkrabaanthony-8192249.jpg&fm=jpg",
   },
   {
     title: "Routing and Channel Management",
-    text: "Coordinated inbound/outbound workflows across all operations.",
-    image: channelMapImg,
+    text: "Coordinated inbound and outbound workflows across operations.",
+    image:
+      "https://images.pexels.com/photos/7709268/pexels-photo-7709268.jpeg?cs=srgb&dl=pexels-mart-production-7709268.jpg&fm=jpg",
   },
   {
     title: "Quality Intelligence Layer",
     text: "Continuous QA insights driving measurable service improvement.",
-    image: analyticsImg,
+    image:
+      "https://images.pexels.com/photos/8866775/pexels-photo-8866775.jpeg?cs=srgb&dl=pexels-yankrukov-8866775.jpg&fm=jpg",
   },
 ];
+
+const showcaseImage =
+  "https://images.pexels.com/photos/8191956/pexels-photo-8191956.jpeg?cs=srgb&dl=pexels-shkrabaanthony-8191956.jpg&fm=jpg";
+
+const globalImage =
+  "https://images.pexels.com/photos/8866775/pexels-photo-8866775.jpeg?cs=srgb&dl=pexels-yankrukov-8866775.jpg&fm=jpg";
 
 const contactChannels = [
   {
@@ -166,6 +197,7 @@ const inViewViewport = { once: true, amount: 0.25, margin: "0px 0px -10% 0px" };
 
 function App() {
   const [activeSection, setActiveSection] = useState("features");
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -203,6 +235,14 @@ function App() {
       window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4200);
+
+    return () => window.clearInterval(timer);
   }, []);
 
   const handleContactChange = (event) => {
@@ -305,7 +345,7 @@ ${contactForm.message.trim()}`);
           <motion.div className="hero-copy" variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <p className="eyebrow">
               <Sparkles size={14} />
-              SOLUTION-FOCUSED. TECH-POWERED.
+              DYNAMIC SERVICE EXPERIENCE
             </p>
             <h1>Enterprise-grade customer operations designed for modern service brands.</h1>
             <p className="subtext">
@@ -330,13 +370,36 @@ ${contactForm.message.trim()}`);
             </div>
           </motion.div>
 
-          <motion.aside className="hero-panel" variants={fadeUp} initial="hidden" animate="show" custom={1}>
-            <motion.img
-              src={supportHubImg}
-              alt="Support operations visual"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <motion.aside className="hero-panel hero-media" variants={fadeUp} initial="hidden" animate="show" custom={1}>
+            <AnimatePresence mode="wait">
+              <motion.figure
+                key={heroSlides[currentSlide].image}
+                className="hero-slide"
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <img src={heroSlides[currentSlide].image} alt={heroSlides[currentSlide].title} />
+                <figcaption className="hero-overlay">
+                  <p>{heroSlides[currentSlide].title}</p>
+                  <span>{heroSlides[currentSlide].subtitle}</span>
+                </figcaption>
+              </motion.figure>
+            </AnimatePresence>
+
+            <div className="hero-dots" role="tablist" aria-label="Hero Slides">
+              {heroSlides.map((slide, index) => (
+                <button
+                  type="button"
+                  key={slide.image}
+                  className={`hero-dot${index === currentSlide ? " active" : ""}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              ))}
+            </div>
+
             <motion.div
               className="float-card card-one"
               animate={{ y: [0, -8, 0] }}
@@ -350,8 +413,8 @@ ${contactForm.message.trim()}`);
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5.3, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
             >
-              <Handshake size={16} />
-              <span>24/7 Coverage</span>
+              <Globe2 size={16} />
+              <span>Global-ready Teams</span>
             </motion.div>
           </motion.aside>
         </section>
@@ -412,7 +475,7 @@ ${contactForm.message.trim()}`);
               viewport={inViewViewport}
               custom={2}
             >
-              <img src={analyticsImg} alt="Quality and analytics dashboard visual" />
+              <img src={showcaseImage} alt="Quality and analytics dashboard visual" />
               <div>
                 <h3>Operational intelligence for every call journey</h3>
                 <ul>
@@ -450,7 +513,7 @@ ${contactForm.message.trim()}`);
           </div>
 
           <motion.div className="global-band" variants={fadeUp} initial="hidden" whileInView="show" viewport={inViewViewport}>
-            <img src={channelMapImg} alt="Global operations and routing visual" />
+            <img src={globalImage} alt="Global operations and routing visual" />
             <div className="global-metrics">
               <article>
                 <strong>17+</strong>
