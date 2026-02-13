@@ -1,0 +1,37 @@
+<svg width="980" height="760" viewBox="0 0 980 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgC" x1="128" y1="62" x2="862" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#29C8D3"/>
+      <stop offset="0.49" stop-color="#3E95DF"/>
+      <stop offset="1" stop-color="#615FD6"/>
+    </linearGradient>
+  </defs>
+  <rect width="980" height="760" rx="48" fill="#F3F8FF"/>
+  <rect x="92" y="86" width="796" height="588" rx="36" fill="#FFFFFF"/>
+  <rect x="138" y="136" width="708" height="70" rx="18" fill="#F5FAFF"/>
+  <rect x="168" y="160" width="164" height="16" rx="8" fill="#D7E8FD"/>
+  <rect x="696" y="152" width="120" height="36" rx="18" fill="url(#bgC)"/>
+  <rect x="138" y="228" width="348" height="188" rx="24" fill="#F5FAFF"/>
+  <rect x="500" y="228" width="346" height="188" rx="24" fill="#F5FAFF"/>
+  <rect x="138" y="432" width="708" height="194" rx="24" fill="#F5FAFF"/>
+  <rect x="176" y="370" width="34" height="32" rx="8" fill="url(#bgC)"/>
+  <rect x="224" y="332" width="34" height="70" rx="8" fill="url(#bgC)"/>
+  <rect x="272" y="290" width="34" height="112" rx="8" fill="url(#bgC)"/>
+  <rect x="320" y="316" width="34" height="86" rx="8" fill="url(#bgC)"/>
+  <rect x="368" y="268" width="34" height="134" rx="8" fill="url(#bgC)"/>
+  <circle cx="562" cy="318" r="74" fill="url(#bgC)" fill-opacity="0.24"/>
+  <circle cx="562" cy="318" r="44" fill="url(#bgC)"/>
+  <path d="M562 244V318L607 342" stroke="#052F66" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="648" y="276" width="152" height="16" rx="8" fill="#D7E8FD"/>
+  <rect x="648" y="306" width="112" height="14" rx="7" fill="#E4F0FF"/>
+  <rect x="648" y="334" width="136" height="14" rx="7" fill="#E4F0FF"/>
+  <circle cx="178" cy="486" r="14" fill="#3E95DF"/>
+  <rect x="204" y="478" width="230" height="14" rx="7" fill="#D8E9FD"/>
+  <rect x="204" y="502" width="170" height="12" rx="6" fill="#E4F0FF"/>
+  <circle cx="178" cy="542" r="14" fill="#615FD6"/>
+  <rect x="204" y="534" width="260" height="14" rx="7" fill="#D8E9FD"/>
+  <rect x="204" y="558" width="188" height="12" rx="6" fill="#E4F0FF"/>
+  <rect x="590" y="472" width="224" height="118" rx="20" fill="url(#bgC)"/>
+  <rect x="620" y="514" width="164" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="620" y="536" width="108" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.78"/>
+</svg>
