@@ -188,9 +188,9 @@ const contactChannels = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@callivos.com",
+    value: "info@callivos.com",
     meta: "Reply within one business day.",
-    href: "mailto:hello@callivos.com",
+    href: "mailto:info@callivos.com",
   },
   {
     icon: Clock3,
@@ -338,7 +338,7 @@ Company: ${contactForm.company.trim() || "N/A"}
 Message:
 ${contactForm.message.trim()}`);
 
-    window.location.href = `mailto:hello@callivos.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@callivos.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -349,6 +349,7 @@ ${contactForm.message.trim()}`);
             <span className="brand-wordmark" aria-label="Callivos">
               <span className="brand-mark">C</span>alli<span className="brand-mark">V</span>os
             </span>
+            <span className="brand-slogan">Connecting Voices</span>
           </a>
 
           <nav className="nav-links" aria-label="Primary">
@@ -373,15 +374,14 @@ ${contactForm.message.trim()}`);
             >
               Stories
             </a>
+            <a
+              className={activeSection === "contact" ? "active" : ""}
+              href="#contact"
+              onClick={(event) => handleSectionScroll(event, "contact")}
+            >
+              Contact Us
+            </a>
           </nav>
-
-          <a
-            className={`nav-contact-link${activeSection === "contact" ? " active" : ""}`}
-            href="#contact"
-            onClick={(event) => handleSectionScroll(event, "contact")}
-          >
-            Contact Us
-          </a>
         </div>
       </header>
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800&family=Sora:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800&family=Sora:wght@500;600;700;800&display=swap");
 
 :root {
   --bg-1: #f7f1e4;
@@ -87,7 +87,7 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 0.55rem;
 }
 
 .brand-wordmark {
@@ -104,6 +104,18 @@ img {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.brand-slogan {
+  font-family: "Lato", "Manrope", sans-serif;
+  font-size: clamp(0.66rem, 0.95vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  align-self: flex-end;
+  margin-bottom: 0.2rem;
 }
 
 .nav-links {
@@ -127,24 +139,6 @@ img {
   color: var(--ink);
   background: rgba(62, 151, 223, 0.12);
   box-shadow: inset 0 0 0 1px var(--line);
-}
-
-.nav-contact-link {
-  color: var(--ink);
-  font-family: "Sora", "Manrope", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.42rem 0.78rem;
-  border-radius: 7px;
-  border: 1px solid var(--line);
-  background: rgba(62, 151, 223, 0.08);
-  transition: background-color 180ms ease, box-shadow 180ms ease;
-}
-
-.nav-contact-link:hover,
-.nav-contact-link.active {
-  background: rgba(62, 151, 223, 0.14);
-  box-shadow: inset 0 0 0 1px var(--line-strong);
 }
 
 .btn {
@@ -869,8 +863,7 @@ img {
   }
 
   .nav-links,
-  .site-header .btn-small,
-  .nav-contact-link {
+  .site-header .btn-small {
     display: none;
   }
 
@@ -889,6 +882,12 @@ img {
 
   .brand-wordmark {
     font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .brand-slogan {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.14rem;
   }
 
   .vision-grid,
