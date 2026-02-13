@@ -410,7 +410,7 @@ ${contactForm.message.trim()}`);
               </p>
               <h1>Build a high-performance call center engine without the overhead.</h1>
               <p>
-                Callivos helps startups and growth brands deploy scalable support operations with the right mix of
+                Callivos helps startups and growing brands deploy scalable support operations with the right mix of
                 people, process, and AI.
               </p>
               <div className="hero-actions">
@@ -728,7 +728,7 @@ ${contactForm.message.trim()}`);
       <footer className="site-footer">
         <div className="page-wrap footer-row">
           <p>Callivos</p>
-          <p>Connecting voices through high-performance customer operations.</p>
+          <p>Connecting Voices for high-performance customer operations.</p>
         </div>
       </footer>
     </>

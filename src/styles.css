@@ -88,6 +88,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  min-width: 0;
 }
 
 .brand-wordmark {
@@ -122,6 +123,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  min-width: 0;
 }
 
 .nav-links a {
@@ -720,6 +722,7 @@ img {
   font-family: "Sora", "Manrope", sans-serif;
   font-size: 0.98rem;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .channel-card span {
@@ -862,9 +865,30 @@ img {
     padding-top: 0.56rem;
   }
 
-  .nav-links,
-  .site-header .btn-small {
+  .nav-row {
+    flex-wrap: wrap;
+    row-gap: 0.58rem;
+    padding: 0.62rem 0.72rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    order: 2;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.08rem;
+    gap: 0.34rem;
+  }
+
+  .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.84rem;
+    padding: 0.36rem 0.58rem;
   }
 
   .hero-band {
@@ -908,6 +932,64 @@ img {
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    gap: 0.38rem;
+  }
+
+  .brand-wordmark {
+    font-size: clamp(1.42rem, 8.5vw, 1.76rem);
+  }
+
+  .brand-slogan {
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.08rem;
+  }
+
+  .hero-layout {
+    min-height: auto;
+  }
+
+  .hero-panel {
+    padding: 1rem;
+  }
+
+  .hero-panel h1 {
+    font-size: clamp(1.54rem, 8.2vw, 2.08rem);
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    gap: 0.5rem;
+  }
+
+  .hero-action-link {
+    font-size: 0.84rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.3rem, 6.6vw, 1.72rem);
+  }
+
+  .story-row {
+    min-height: auto;
+  }
+
+  .story-copy {
+    padding: 0.86rem;
+  }
+
+  .contact-form,
+  .channel-card,
+  .roadmap-card,
+  .lead-block,
+  .capability-card,
+  .vision-card {
+    padding: 0.8rem;
   }
 }
 
