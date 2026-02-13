@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import logo from "../Calivos.png";
 
 const heroSlides = [
   {
@@ -334,8 +333,9 @@ ${contactForm.message.trim()}`);
       <header className="site-header">
         <div className="page-wrap nav-row">
           <a className="brand" href="#top" onClick={(event) => handleSectionScroll(event, "top")}>
-            <img src={logo} alt="Callivos logo" />
-            <span>Callivos</span>
+            <span className="brand-wordmark" aria-label="Callivos">
+              <span className="brand-mark">C</span>alli<span className="brand-mark">V</span>os
+            </span>
           </a>
 
           <nav className="nav-links" aria-label="Primary">
