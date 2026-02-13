@@ -10,7 +10,6 @@ import {
   Headphones,
   Mail,
   MapPin,
-  PhoneCall,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
@@ -51,10 +50,7 @@ const heroSlides = [
 ];
 
 const performanceKpis = [
-  { value: "96%", label: "CSAT Stability" },
-  { value: "35%", label: "Cost-to-Serve Reduction" },
   { value: "24/7", label: "Service Availability" },
-  { value: "20+", label: "Languages Supported" },
 ];
 
 const capabilities = [
@@ -99,14 +95,38 @@ const roadmapSteps = [
 ];
 
 const industries = [
-  "Banking",
-  "Healthcare",
-  "Retail",
-  "eCommerce",
-  "Technology",
-  "Travel",
-  "Telecom",
-  "Public Sector",
+  {
+    name: "Banking",
+    detail: "Secure inbound support for accounts, cards, and service requests.",
+  },
+  {
+    name: "Healthcare",
+    detail: "Patient-focused communication with privacy-aware handling standards.",
+  },
+  {
+    name: "Retail",
+    detail: "Fast response for order updates, returns, and customer concerns.",
+  },
+  {
+    name: "eCommerce",
+    detail: "Always-on support for checkout issues and post-purchase journeys.",
+  },
+  {
+    name: "Technology",
+    detail: "Tiered inbound assistance for product, access, and usage issues.",
+  },
+  {
+    name: "Travel",
+    detail: "Reliable help for booking, schedule, and disruption-related queries.",
+  },
+  {
+    name: "Telecom",
+    detail: "Consistent service for billing, activation, and technical requests.",
+  },
+  {
+    name: "Public Sector",
+    detail: "Clear citizen support with accountable response and case tracking.",
+  },
 ];
 
 const visionPrinciples = [
@@ -165,13 +185,6 @@ const stories = [
 ];
 
 const contactChannels = [
-  {
-    icon: PhoneCall,
-    label: "Phone",
-    value: "+20 10 0000 0000",
-    meta: "Mon-Sat, 9:00 AM - 11:00 PM",
-    href: "tel:+201000000000",
-  },
   {
     icon: Mail,
     label: "Email",
@@ -363,7 +376,7 @@ ${contactForm.message.trim()}`);
           </nav>
 
           <a
-            className={`btn btn-small${activeSection === "contact" ? " active" : ""}`}
+            className={`nav-contact-link${activeSection === "contact" ? " active" : ""}`}
             href="#contact"
             onClick={(event) => handleSectionScroll(event, "contact")}
           >
@@ -402,7 +415,7 @@ ${contactForm.message.trim()}`);
               </p>
               <div className="hero-actions">
                 <a
-                  className="btn btn-primary"
+                  className="hero-action-link hero-action-primary"
                   href="#contact"
                   onClick={(event) => handleSectionScroll(event, "contact")}
                 >
@@ -410,11 +423,12 @@ ${contactForm.message.trim()}`);
                   <ArrowRight size={17} />
                 </a>
                 <a
-                  className="btn btn-ghost"
+                  className="hero-action-link hero-action-secondary"
                   href="#features"
                   onClick={(event) => handleSectionScroll(event, "features")}
                 >
                   View Solutions
+                  <ArrowRight size={17} />
                 </a>
               </div>
 
@@ -427,24 +441,6 @@ ${contactForm.message.trim()}`);
                 ))}
               </div>
             </motion.div>
-
-            <motion.aside className="hero-side-rail" variants={fadeUp} initial="hidden" animate="show" custom={1}>
-              {heroSlides.map((slide, index) => (
-                <button
-                  type="button"
-                  key={slide.shortLabel}
-                  className={`rail-item${index === currentSlide ? " active" : ""}`}
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`Go to ${slide.shortLabel}`}
-                >
-                  <img src={slide.image} alt={slide.shortLabel} />
-                  <div>
-                    <p>{slide.badge}</p>
-                    <span>{slide.shortLabel}</span>
-                  </div>
-                </button>
-              ))}
-            </motion.aside>
           </div>
         </section>
 
@@ -567,7 +563,10 @@ ${contactForm.message.trim()}`);
                 </p>
                 <div className="industry-grid">
                   {industries.map((industry) => (
-                    <span key={industry}>{industry}</span>
+                    <article className="industry-card" key={industry.name}>
+                      <h4>{industry.name}</h4>
+                      <p>{industry.detail}</p>
+                    </article>
                   ))}
                 </div>
               </motion.article>
@@ -716,7 +715,7 @@ ${contactForm.message.trim()}`);
                     required
                   />
                 </label>
-                <button className="btn btn-primary contact-submit" type="submit">
+                <button className="hero-action-link hero-action-primary contact-submit-link" type="submit">
                   Send Message
                   <ArrowRight size={17} />
                 </button>
