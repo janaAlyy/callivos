@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   BarChart3,
-  CalendarCheck2,
   Clock3,
   Cpu,
   Globe2,
@@ -76,56 +75,87 @@ const capabilities = [
   },
 ];
 
-const roadmapSteps = [
+const socialProofHighlights = [
   {
-    icon: CalendarCheck2,
+    title: "3 Industries Served",
+    text: "Aviation, E-commerce, and Logistics.",
+  },
+  {
+    title: "Local & International Operations",
+    text: "Support model built for domestic and cross-border coverage.",
+  },
+  {
+    title: "Scalable Teams for Peak Seasons",
+    text: "Rapid staffing expansion for campaigns and demand spikes.",
+  },
+];
+
+const socialProofMetrics = [
+  {
+    value: "400,000+",
+    label: "Monthly Customer Interactions",
+  },
+  {
+    value: "24/7",
+    label: "Omnichannel Support",
+  },
+  {
+    value: "90%",
+    label: "Average Customer Satisfaction (CSAT)",
+  },
+  {
+    value: "45%",
+    label: "Faster Response Time",
+  },
+];
+
+const operatingModelIndustries = [
+  {
+    name: "Banking",
+    detail: "Secure inbound support for account, card, and transaction-related customer requests.",
+  },
+  {
+    name: "Healthcare",
+    detail: "Patient-centered communication with privacy-aware handling and reliable follow-up.",
+  },
+  {
+    name: "Retail",
+    detail: "Fast order, return, and product support to protect customer loyalty.",
+  },
+  {
+    name: "E-commerce",
+    detail: "Always-on support for checkout, delivery, and post-purchase journeys.",
+  },
+  {
+    name: "Technology",
+    detail: "Tiered assistance for onboarding, access, and usage-related issues.",
+  },
+  {
+    name: "Travel",
+    detail: "Responsive support for bookings, schedules, and service disruptions.",
+  },
+];
+
+const operatingModelSteps = [
+  {
+    icon: Headphones,
     title: "Discover",
-    text: "Map channels, demand volumes, service levels, and customer journey friction points.",
+    text: "Map channels, expected volumes, service levels, and customer journey friction points.",
   },
   {
     icon: Cpu,
     title: "Build",
-    text: "Design staffing, workflows, and automation architecture around your support model.",
+    text: "Design staffing plans, workflows, and automation around your support operating model.",
   },
   {
     icon: Globe2,
+    title: "Operate",
+    text: "Launch with clear SLAs, quality controls, and live visibility across all active channels.",
+  },
+  {
+    icon: BarChart3,
     title: "Scale",
-    text: "Expand with multilingual coverage, stronger QA loops, and live performance visibility.",
-  },
-];
-
-const industries = [
-  {
-    name: "Banking",
-    detail: "Secure inbound support for accounts, cards, and service requests.",
-  },
-  {
-    name: "Healthcare",
-    detail: "Patient-focused communication with privacy-aware handling standards.",
-  },
-  {
-    name: "Retail",
-    detail: "Fast response for order updates, returns, and customer concerns.",
-  },
-  {
-    name: "eCommerce",
-    detail: "Always-on support for checkout issues and post-purchase journeys.",
-  },
-  {
-    name: "Technology",
-    detail: "Tiered inbound assistance for product, access, and usage issues.",
-  },
-  {
-    name: "Travel",
-    detail: "Reliable help for booking, schedule, and disruption-related queries.",
-  },
-  {
-    name: "Telecom",
-    detail: "Consistent service for billing, activation, and technical requests.",
-  },
-  {
-    name: "Public Sector",
-    detail: "Clear citizen support with accountable response and case tracking.",
+    text: "Expand coverage with KPI-driven optimization and flexible staffing for seasonal peaks.",
   },
 ];
 
@@ -157,30 +187,94 @@ const visionPrinciples = [
   },
 ];
 
-const stories = [
+const caseStudies = [
   {
-    tag: "Featured Story",
-    title: "How a retail brand reduced first-response time",
-    text: "A blended model of support pods, QA coaching, and ticket-routing automation improved speed at scale.",
+    tag: "Aviation Training Academy - International",
+    title: "High-volume student support operations with seasonal demand spikes.",
+    volume: [
+      "20,000+ inbound calls monthly",
+      "90,000-150,000 digital inquiries (email and social)",
+      "Seasonal outbound campaigns",
+    ],
+    actions: [
+      "High-volume inbound handling",
+      "Omnichannel support",
+      "Seasonal scaling",
+      "International service standards",
+    ],
+    results: [
+      "45-55% faster response time",
+      "85-88% CSAT",
+      "95% call answer rate",
+      "Zero downtime during peak seasons",
+    ],
     image:
-      "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    cta: "Explore the transformation",
+      "https://images.pexels.com/photos/5816283/pexels-photo-5816283.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
   {
-    tag: "Case Study",
-    title: "Launching multilingual support for a fintech expansion",
-    text: "New market rollout with regional language coverage and compliance controls.",
+    tag: "Automotive Accessories Brand - Local Startup",
+    title: "Conversion-focused customer support for digital-first commerce.",
+    volume: [
+      "8,000-10,000 calls monthly",
+      "40,000-70,000 digital inquiries monthly",
+    ],
+    actions: [
+      "WhatsApp and Instagram support",
+      "Order confirmation and inquiry handling",
+      "After-sales support",
+    ],
+    results: [
+      "45% faster first response",
+      "30% higher order confirmation rate",
+      "20-25% increase in repeat purchases",
+      "Reduced cart-abandonment inquiries",
+    ],
     image:
-      "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    cta: "View details",
+      "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
   {
-    tag: "Client Impact",
-    title: "Elevating first-contact resolution through AI agent guidance",
-    text: "Process intelligence and agent prompts improved accuracy and reduced rework.",
+    tag: "Logistics Company - International",
+    title: "SLA-driven shipment support across large digital volumes.",
+    volume: [
+      "25,000+ calls monthly",
+      "120,000-180,000 digital interactions monthly",
+    ],
+    actions: [
+      "Shipment tracking support",
+      "Escalation handling",
+      "SLA-driven operations",
+    ],
+    results: [
+      "35% faster issue resolution",
+      "50% fewer escalations",
+      "87% CSAT",
+      "97% SLA compliance",
+    ],
     image:
-      "https://images.pexels.com/photos/6804070/pexels-photo-6804070.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    cta: "Read impact",
+      "https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  },
+];
+
+const howWeWorkSteps = [
+  {
+    icon: Headphones,
+    title: "Dedicated support teams",
+    text: "Assigned teams operate as an extension of your business with clear ownership and accountability.",
+  },
+  {
+    icon: Mail,
+    title: "Omnichannel setup",
+    text: "Calls, email, WhatsApp, and social channels are configured into one seamless support workflow.",
+  },
+  {
+    icon: Globe2,
+    title: "Scalable workforce",
+    text: "Staffing flexes for promotions, seasonality, and growth phases without impacting service continuity.",
+  },
+  {
+    icon: BarChart3,
+    title: "KPI-driven reviews",
+    text: "Weekly performance tracking keeps response time, CSAT, and SLA targets under continuous control.",
   },
 ];
 
@@ -206,7 +300,7 @@ const contactChannels = [
   },
 ];
 
-const trackedSections = ["features", "launch", "stories", "contact"];
+const trackedSections = ["features", "operating-model", "case-studies", "how-we-work", "contact"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
@@ -361,18 +455,25 @@ ${contactForm.message.trim()}`);
               Solutions
             </a>
             <a
-              className={activeSection === "launch" ? "active" : ""}
-              href="#launch"
-              onClick={(event) => handleSectionScroll(event, "launch")}
+              className={activeSection === "operating-model" ? "active" : ""}
+              href="#operating-model"
+              onClick={(event) => handleSectionScroll(event, "operating-model")}
             >
-              Model
+              Operating Model
             </a>
             <a
-              className={activeSection === "stories" ? "active" : ""}
-              href="#stories"
-              onClick={(event) => handleSectionScroll(event, "stories")}
+              className={activeSection === "case-studies" ? "active" : ""}
+              href="#case-studies"
+              onClick={(event) => handleSectionScroll(event, "case-studies")}
             >
-              Stories
+              Case Studies
+            </a>
+            <a
+              className={activeSection === "how-we-work" ? "active" : ""}
+              href="#how-we-work"
+              onClick={(event) => handleSectionScroll(event, "how-we-work")}
+            >
+              How We Work
             </a>
             <a
               className={activeSection === "contact" ? "active" : ""}
@@ -441,6 +542,53 @@ ${contactForm.message.trim()}`);
                 ))}
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        <section className="section proof-band">
+          <div className="page-wrap section-shell">
+            <motion.div className="section-head" variants={fadeUp} initial="hidden" whileInView="show" viewport={inViewViewport}>
+              <p className="kicker">Why Clients Trust Callivos</p>
+              <h2>Trusted customer support delivery across high-volume local and international operations.</h2>
+            </motion.div>
+
+            <div className="proof-layout">
+              <motion.article
+                className="proof-summary"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={inViewViewport}
+                custom={0}
+              >
+                <h3>Operational credibility you can show clients immediately</h3>
+                <ul className="proof-list">
+                  {socialProofHighlights.map((item) => (
+                    <li key={item.title}>
+                      <span>{item.title}</span>
+                      <p>{item.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+
+              <div className="proof-stat-grid">
+                {socialProofMetrics.map((metric, index) => (
+                  <motion.article
+                    className="proof-metric"
+                    key={metric.label}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={inViewViewport}
+                    custom={index + 1}
+                  >
+                    <strong>{metric.value}</strong>
+                    <p>{metric.label}</p>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -540,11 +688,11 @@ ${contactForm.message.trim()}`);
           </div>
         </section>
 
-        <section className="section launch-band" id="launch">
+        <section className="section launch-band" id="operating-model">
           <div className="page-wrap section-shell launch-shell">
             <motion.div className="section-head" variants={fadeUp} initial="hidden" whileInView="show" viewport={inViewViewport}>
               <p className="kicker">Operating Model</p>
-              <h2>Practical roadmap to launch, optimize, and scale your support operations.</h2>
+              <h2>Practical structure to launch, govern, and scale your customer support operations.</h2>
             </motion.div>
 
             <div className="launch-grid">
@@ -558,11 +706,11 @@ ${contactForm.message.trim()}`);
               >
                 <h3>One partner from planning to daily execution</h3>
                 <p>
-                  We align the service model to your growth goals, then operate with measurable controls for quality,
-                  productivity, and customer outcomes.
+                  We align delivery to your business goals, then run day-to-day support with measurable controls for
+                  quality, productivity, and customer outcomes.
                 </p>
                 <div className="industry-grid">
-                  {industries.map((industry) => (
+                  {operatingModelIndustries.map((industry) => (
                     <article className="industry-card" key={industry.name}>
                       <h4>{industry.name}</h4>
                       <p>{industry.detail}</p>
@@ -572,7 +720,7 @@ ${contactForm.message.trim()}`);
               </motion.article>
 
               <div className="roadmap-stack">
-                {roadmapSteps.map(({ icon: Icon, title, text }, index) => (
+                {operatingModelSteps.map(({ icon: Icon, title, text }, index) => (
                   <motion.article
                     className="roadmap-card"
                     key={title}
@@ -595,34 +743,91 @@ ${contactForm.message.trim()}`);
           </div>
         </section>
 
-        <section className="section" id="stories">
+        <section className="section" id="case-studies">
           <div className="page-wrap section-shell">
             <motion.div className="section-head" variants={fadeUp} initial="hidden" whileInView="show" viewport={inViewViewport}>
-              <p className="kicker">Client Stories</p>
-              <h2>Transformation outcomes delivered through disciplined service execution.</h2>
+              <p className="kicker">Case Studies</p>
+              <h2>Three delivery models that prove measurable support outcomes across industries.</h2>
             </motion.div>
 
-            <div className="story-lanes">
-              {stories.map((story, index) => (
+            <div className="case-study-stack">
+              {caseStudies.map((study, index) => (
                 <motion.article
-                  key={story.title}
-                  className={`story-row${index % 2 === 0 ? " row-left" : " row-right"}`}
+                  className="case-study-card"
+                  key={study.tag}
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={inViewViewport}
                   custom={index}
                 >
-                  <img src={story.image} alt={story.title} />
-                  <div className="story-copy">
-                    <p>{story.tag}</p>
-                    <h3>{story.title}</h3>
-                    <span>{story.text}</span>
-                    <a href="#contact" onClick={(event) => handleSectionScroll(event, "contact")}>
-                      {story.cta}
-                      <ArrowRight size={14} />
-                    </a>
+                  <div className="case-study-cover">
+                    <img src={study.image} alt={study.tag} />
                   </div>
+                  <div className="case-study-content">
+                    <div className="case-study-head">
+                      <p>{study.tag}</p>
+                      <h3>{study.title}</h3>
+                    </div>
+
+                    <div className="case-study-grid">
+                      <article className="case-study-block">
+                        <h4>Volume</h4>
+                        <ul>
+                          {study.volume.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+
+                      <article className="case-study-block">
+                        <h4>What We Did</h4>
+                        <ul>
+                          {study.actions.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+
+                      <article className="case-study-block">
+                        <h4>Results</h4>
+                        <ul>
+                          {study.results.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section launch-band" id="how-we-work">
+          <div className="page-wrap section-shell launch-shell">
+            <motion.div className="section-head" variants={fadeUp} initial="hidden" whileInView="show" viewport={inViewViewport}>
+              <p className="kicker">How We Work</p>
+              <h2>Operational structure designed for stable quality and scalable growth.</h2>
+            </motion.div>
+
+            <div className="work-grid">
+              {howWeWorkSteps.map(({ icon: Icon, title, text }, index) => (
+                <motion.article
+                  className="work-card"
+                  key={title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={inViewViewport}
+                  custom={index}
+                >
+                  <div className="work-title">
+                    <Icon size={20} />
+                    <h3>{title}</h3>
+                  </div>
+                  <p>{text}</p>
                 </motion.article>
               ))}
             </div>

@@ -3,3 +3,5 @@ dist
 .DS_Store
 dist.zip
 .idea
+__pycache__/
+email_sender_gui/.msal_token_cache.json
