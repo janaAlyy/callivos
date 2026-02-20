@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800&family=Sora:wght@500;600;700;800&display=swap");
 
 :root {
-  --bg-1: #f7f1e4;
-  --bg-2: #fffbf3;
-  --surface: #fff7eb;
-  --surface-soft: #fff1dd;
-  --line: rgba(146, 121, 83, 0.24);
-  --line-strong: rgba(146, 121, 83, 0.36);
-  --ink: #000000;
-  --muted: #000000;
-  --cyan: #000000;
-  --blue: #000000;
-  --indigo: #000000;
+  --bg-1: #f7fafc;
+  --bg-2: #eef4fc;
+  --surface: #ffffff;
+  --surface-soft: #f2f7ff;
+  --line: rgba(109, 132, 162, 0.24);
+  --line-strong: rgba(109, 132, 162, 0.38);
+  --ink: #10233f;
+  --muted: #4f6581;
+  --cyan: #27c5d8;
+  --blue: #3399df;
+  --indigo: #2478d7;
   --gradient: linear-gradient(132deg, var(--cyan) 0%, var(--blue) 48%, var(--indigo) 100%);
   --logo-blue-gradient: linear-gradient(132deg, #27c5d8 0%, #3399df 52%, #2478d7 100%);
   --logo-blue-solid: #2f8fdd;
@@ -28,9 +28,13 @@
     rgba(39, 197, 216, 0.68) 80%,
     rgba(39, 197, 216, 0) 100%
   );
-  --heading-accent-gradient: linear-gradient(112deg, #000000 0%, #000000 58%, #3399df 86%, #2478d7 100%);
-  --shadow-soft: 0 18px 34px rgba(91, 71, 39, 0.14);
-  --shadow-card: 0 10px 20px rgba(91, 71, 39, 0.1);
+  --heading-accent-gradient: linear-gradient(112deg, var(--ink) 0%, var(--ink) 58%, #3399df 86%, #2478d7 100%);
+  --panel-bg: rgba(255, 255, 255, 0.86);
+  --panel-bg-strong: rgba(255, 255, 255, 0.93);
+  --chip-bg: rgba(244, 248, 255, 0.92);
+  --field-bg: rgba(255, 255, 255, 0.9);
+  --shadow-soft: 0 18px 34px rgba(20, 53, 91, 0.12);
+  --shadow-card: 0 10px 20px rgba(20, 53, 91, 0.08);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -60,7 +64,7 @@ body {
   color: var(--ink);
   font-family: "Manrope", "Segoe UI", sans-serif;
   line-height: 1.62;
-  background: #fff9ef;
+  background: #f7fafc;
   overflow-x: hidden;
 }
 
@@ -85,7 +89,7 @@ img {
   top: 0;
   z-index: 90;
   padding: 0.95rem 0 0.42rem;
-  background: linear-gradient(180deg, rgba(255, 250, 242, 0.92) 65%, rgba(255, 250, 242, 0));
+  background: linear-gradient(180deg, rgba(247, 250, 252, 0.94) 65%, rgba(247, 250, 252, 0));
 }
 
 .nav-row {
@@ -95,7 +99,7 @@ img {
   gap: 1.2rem;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(255, 248, 236, 0.88);
+  background: var(--panel-bg);
   backdrop-filter: blur(9px);
   box-shadow: var(--shadow-soft);
   padding: 0.78rem 1.06rem;
@@ -185,7 +189,7 @@ img {
 }
 
 .btn-small {
-  color: var(--blue);
+  color: var(--logo-blue-deep);
   padding: 0.62rem 0.9rem;
   background:
     linear-gradient(var(--surface), var(--surface)) padding-box,
@@ -197,13 +201,13 @@ img {
 }
 
 .btn-primary {
-  color: #000000;
+  color: #ffffff;
   background: var(--gradient);
   box-shadow: var(--shadow-card);
 }
 
 .btn-ghost {
-  color: var(--blue);
+  color: var(--logo-blue-deep);
   background:
     linear-gradient(var(--surface), var(--surface)) padding-box,
     var(--gradient) border-box;
@@ -238,7 +242,7 @@ img {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(255, 250, 242, 0.95) 0%, rgba(255, 250, 242, 0.86) 34%, rgba(255, 250, 242, 0.52) 70%, rgba(255, 250, 242, 0.66) 100%);
+    linear-gradient(90deg, rgba(247, 250, 252, 0.95) 0%, rgba(247, 250, 252, 0.88) 34%, rgba(247, 250, 252, 0.56) 70%, rgba(247, 250, 252, 0.72) 100%);
 }
 
 .hero-layout {
@@ -254,7 +258,7 @@ img {
   align-self: center;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  background: rgba(255, 250, 242, 0.88);
+  background: var(--panel-bg);
   backdrop-filter: blur(4px);
   box-shadow: var(--shadow-soft);
   padding: clamp(1.45rem, 2.9vw, 2.35rem);
@@ -359,7 +363,7 @@ img {
 .kpi-grid article {
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
-  background: rgba(255, 248, 236, 0.92);
+  background: var(--panel-bg-strong);
   box-shadow: var(--shadow-card);
   padding: 0.95rem 1.02rem;
 }
@@ -460,7 +464,7 @@ img {
 }
 
 .proof-summary {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   padding: var(--card-pad);
 }
 
@@ -481,7 +485,7 @@ img {
 .proof-list li {
   border-radius: 8px;
   border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--chip-bg);
   padding: 0.82rem 0.9rem;
 }
 
@@ -507,7 +511,7 @@ img {
 }
 
 .proof-metric {
-  background: rgba(255, 248, 236, 0.92);
+  background: var(--panel-bg-strong);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -576,7 +580,7 @@ img {
 }
 
 .lead-block {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   min-height: var(--card-min-height);
   padding: var(--card-pad);
 }
@@ -588,7 +592,7 @@ img {
 }
 
 .vision-card {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: flex;
   flex-direction: column;
   min-height: var(--card-min-height-sm);
@@ -660,7 +664,7 @@ img {
 }
 
 .capability-card {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   padding: var(--card-pad);
   display: flex;
   flex-direction: column;
@@ -684,7 +688,7 @@ img {
 }
 
 .launch-band {
-  background: rgba(255, 249, 238, 0.86);
+  background: rgba(239, 245, 253, 0.78);
 }
 
 .launch-shell {
@@ -698,7 +702,7 @@ img {
 }
 
 .launch-intro {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -730,7 +734,7 @@ img {
 .industry-card {
   border-radius: 8px;
   border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--chip-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -760,7 +764,7 @@ img {
 }
 
 .roadmap-card {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: flex;
   flex-direction: column;
   min-height: var(--card-min-height-sm);
@@ -812,7 +816,7 @@ img {
 }
 
 .case-study-card {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: grid;
   grid-template-columns: minmax(240px, 0.36fr) 1fr;
   align-items: start;
@@ -861,7 +865,7 @@ img {
 .case-study-block {
   border-radius: 8px;
   border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--chip-bg);
   padding: 0.74rem 0.82rem;
 }
 
@@ -890,7 +894,7 @@ img {
 }
 
 .work-card {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: flex;
   flex-direction: column;
   min-height: var(--card-min-height-sm);
@@ -926,7 +930,7 @@ img {
 }
 
 .story-row {
-  background: rgba(255, 248, 236, 0.9);
+  background: var(--panel-bg);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   min-height: 300px;
@@ -1008,7 +1012,7 @@ img {
 }
 
 .channel-card {
-  background: rgba(255, 248, 236, 0.92);
+  background: var(--panel-bg-strong);
   display: flex;
   flex-direction: column;
   min-height: var(--card-min-height-sm);
@@ -1056,7 +1060,7 @@ img {
 }
 
 .contact-form {
-  background: rgba(255, 248, 236, 0.92);
+  background: var(--panel-bg-strong);
   padding: var(--card-pad);
   display: grid;
   gap: 0.96rem;
@@ -1078,8 +1082,8 @@ img {
 .field textarea {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(146, 121, 83, 0.3);
-  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line-strong);
+  background: var(--field-bg);
   color: var(--ink);
   padding: 0.82rem 0.92rem;
   font: inherit;
@@ -1089,7 +1093,7 @@ img {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #000000;
+  color: #6a7d96;
 }
 
 .field input:focus,
