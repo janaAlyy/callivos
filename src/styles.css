@@ -1139,37 +1139,6 @@ img {
   font-weight: 700;
 }
 
-.footer-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0.58rem;
-  width: 2.28rem;
-  height: 2.28rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  background: var(--logo-blue-gradient);
-  color: #ffffff;
-  box-shadow: 0 10px 18px rgba(36, 120, 215, 0.24);
-  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
-}
-
-.footer-link svg {
-  width: 1.12rem;
-  height: 1.12rem;
-  stroke-width: 2.3;
-}
-
-.footer-link:hover,
-.footer-link:focus-visible {
-  box-shadow:
-    0 12px 20px rgba(36, 120, 215, 0.32),
-    0 0 0 3px rgba(51, 153, 223, 0.2);
-  transform: translateY(-1px) scale(1.03);
-  opacity: 1;
-  text-decoration: none;
-}
-
 @media (max-width: 1180px) {
   .hero-bg-frame {
     width: 100%;

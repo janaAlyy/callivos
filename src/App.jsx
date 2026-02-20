@@ -299,6 +299,13 @@ const contactChannels = [
     value: "Egypt",
     meta: "Serving MENA and global teams.",
   },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    value: "@callivos.co",
+    meta: "Updates, stories, and announcements.",
+    href: "https://www.instagram.com/callivos.co/",
+  },
 ];
 
 const trackedSections = ["features", "operating-model", "case-studies", "how-we-work", "contact"];
@@ -934,19 +941,7 @@ ${contactForm.message.trim()}`);
       <footer className="site-footer">
         <div className="page-wrap footer-row">
           <p>Callivos</p>
-          <p>
-            Connecting Voices for high-performance customer operations.{" "}
-            <a
-              className="footer-link"
-              href="https://www.instagram.com/callivos.co/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Callivos Instagram"
-              title="Callivos Instagram"
-            >
-              <Instagram size={17} />
-            </a>
-          </p>
+          <p>Connecting Voices for high-performance customer operations.</p>
         </div>
       </footer>
     </>
